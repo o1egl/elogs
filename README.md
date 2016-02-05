@@ -18,7 +18,49 @@ $ go get -u github.com/o1egl/echo-loggers
 ```
 
 ## Usage
+#### Logrus
+```go
+    import (
+     "github.com/labstack/echo"
+     "github.com/o1egl/logrus"
+      log "github.com/Sirupsen/logrus"
+    )
+    // From default logger
+    l := logrus.New()
+    // From custom logger
+    ls := log.New()
+    l := logrus.FromLogger(ls)
+    e := echo.New()
+    e.SetLogger(l)
+```
 
+#### glog
+```go
+    import (
+     "github.com/labstack/echo"
+     "github.com/o1egl/glog"
+    )
+    l := glog.New()
+    e := echo.New()
+    e.SetLogger(l)
+```
+
+#### go-logger
+```go
+    import (
+     "github.com/labstack/echo"
+     "github.com/o1egl/gologger"
+     log "github.com/apsdehal/go-logger"
+     "os"
+    )
+    // From default logger
+    l := gologger.New()
+    // From custom logger
+    lg, _ := log.New("test", 1, os.Stdout)
+    l := gologger.FromLogger(lg)
+    e := echo.New()
+    e.SetLogger(l)
+```
 
 ## Copyright, License & Contributors
 

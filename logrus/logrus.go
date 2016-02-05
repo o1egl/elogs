@@ -44,10 +44,12 @@ func (l *logger) Fatalf(format string, args ...interface{}) {
 	l.l.Fatalf(format, args...)
 }
 
+// New returns logrus implementation
 func New() *logger {
 	return &logger{log.StandardLogger()}
 }
 
+// FromLogger returns logrus implementation from custom logger instance
 func FromLogger(l *log.Logger) *logger {
 	return &logger{l}
 }

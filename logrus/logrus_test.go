@@ -36,9 +36,9 @@ func TestLogger(t *testing.T) {
 	case "2":
 		l.Fatalf("Fatal%s", "f")
 	}
+	buf := new(bytes.Buffer)
+	ls.Out = buf
 	Convey("Logger should print", t, func() {
-		buf := new(bytes.Buffer)
-		ls.Out = buf
 		Convey("Debug", func() {
 			l.Debug("Debug")
 			testLogMsg("Debug", buf)
@@ -87,7 +87,6 @@ func TestLogger(t *testing.T) {
 			cmd.Run()
 			testLogMsg("Fatalf", buf)
 		})
-
 	})
 }
 
