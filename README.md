@@ -1,5 +1,5 @@
 # Echo Loggers
-[![GoDoc](https://godoc.org/github.com/o1egl/elogs?status.svg)](https://godoc.org/github.com/o1egl/elogs) [![Build Status](http://img.shields.io/travis/o1egl/elogs.svg?style=flat-square)](https://travis-ci.org/o1egl/elogs) [![Coverage Status](http://img.shields.io/coveralls/o1egl/elogs.svg?style=flat-square)](https://coveralls.io/r/o1egl/elogs)
+[![GoDoc](https://godoc.org/github.com/o1egl/elogs?status.svg)](https://godoc.org/github.com/o1egl/elogs) [![Build Status](http://img.shields.io/travis/o1egl/elogs.svg?style=flat-square)](https://travis-ci.org/o1egl/elogs) [![Coverage Status](http://img.shields.io/coveralls/o1egl/elogs.svg?style=flat-square)](https://coveralls.io/r/o1egl/elogs) [![License](http://img.shields.io/:license-mit-blue.svg)](LICENSE)
 
 ## Overview
 
@@ -22,7 +22,7 @@ $ go get -u github.com/o1egl/echo-loggers
 ```go
     import (
      "github.com/labstack/echo"
-     "github.com/o1egl/logrus"
+     "github.com/o1egl/elogs/logrus"
       log "github.com/Sirupsen/logrus"
     )
     // From default logger
@@ -38,7 +38,7 @@ $ go get -u github.com/o1egl/echo-loggers
 ```go
     import (
      "github.com/labstack/echo"
-     "github.com/o1egl/glog"
+     "github.com/o1egl/elogs/glog"
     )
     l := glog.New()
     e := echo.New()
@@ -49,7 +49,7 @@ $ go get -u github.com/o1egl/echo-loggers
 ```go
     import (
      "github.com/labstack/echo"
-     "github.com/o1egl/gologger"
+     "github.com/o1egl/elogs/gologger"
      log "github.com/apsdehal/go-logger"
      "os"
     )
