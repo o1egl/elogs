@@ -1,5 +1,9 @@
 # Echo Loggers
-[![GoDoc](https://godoc.org/github.com/o1egl/elogs?status.svg)](https://godoc.org/github.com/o1egl/elogs) [![Build Status](http://img.shields.io/travis/o1egl/elogs.svg?style=flat-square)](https://travis-ci.org/o1egl/elogs) [![Build status](https://ci.appveyor.com/api/projects/status/em3qo2mils0kj0mv/branch/master?svg=true)](https://ci.appveyor.com/project/o1egl/elogs/branch/master) [![Coverage Status](http://img.shields.io/coveralls/o1egl/elogs.svg?style=flat-square)](https://coveralls.io/r/o1egl/elogs) [![License](http://img.shields.io/:license-mit-blue.svg)](LICENSE)
+[![License](http://img.shields.io/:license-mit-blue.svg)](LICENSE)
+[![GoDoc](https://godoc.org/github.com/o1egl/elogs?status.svg)](https://godoc.org/github.com/o1egl/elogs) 
+[![Build Status](http://img.shields.io/travis/o1egl/elogs.svg?style=flat-square)](https://travis-ci.org/o1egl/elogs) 
+[![Build status](https://ci.appveyor.com/api/projects/status/em3qo2mils0kj0mv/branch/master?svg=true)](https://ci.appveyor.com/project/o1egl/elogs/branch/master) 
+[![Coverage Status](http://img.shields.io/coveralls/o1egl/elogs.svg?style=flat-square)](https://coveralls.io/r/o1egl/elogs) 
 
 ## Overview
 
@@ -70,7 +74,7 @@ $ go get -u github.com/o1egl/echo-loggers
 2. Create a branch (`git checkout -b my_branch`)
 3. Commit your changes (`git commit -am "Added new awesome logger"`)
 4. Push to the branch (`git push origin my_branch`)
-5. Open a [Pull Request](https://github.com/o1egl/echo-loggers/pulls)
+5. Open a [Pull Request](https://github.com/o1egl/elogs/pulls)
 6. Enjoy a refreshing Diet Coke and wait
 
-echo-loggers is released under the MIT license. See [LICENSE](LICENSE)
+Echo loggers is released under the MIT license. See [LICENSE](LICENSE)
