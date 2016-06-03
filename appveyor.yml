@@ -14,15 +14,13 @@ environment:
 install:
   - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
   - rmdir c:\go /s /q
-  - appveyor DownloadFile https://storage.googleapis.com/golang/go1.5.3.windows-amd64.msi
-  - msiexec /i go1.5.3.windows-amd64.msi /q
+  - appveyor DownloadFile https://storage.googleapis.com/golang/go1.6.2.windows-amd64.msi
+  - msiexec /i go1.6.2.windows-amd64.msi /q
   - go version
   - go env
-  - go get -u golang.org/x/tools/cmd/vet
   - go get -u golang.org/x/tools/cmd/cover
   - go get -v -t ./...
 # to run your custom scripts instead of automatic MSBuild
 build_script:
   - SET PATH=%GOPATH%\bin;%PATH%
-  - go vet ./...
   - go test -v -race ./...
