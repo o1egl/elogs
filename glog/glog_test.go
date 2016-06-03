@@ -1,7 +1,7 @@
 package glog
 
 import (
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/log"
 	. "github.com/smartystreets/goconvey/convey"
 	"os"
 	"testing"
@@ -11,7 +11,7 @@ func TestLoggerInitialization(t *testing.T) {
 	Convey("Logger should", t, func() {
 		Convey("Implement echo.Logger interface", func() {
 			l := New()
-			So(l, ShouldImplement, (*echo.Logger)(nil))
+			So(l, ShouldImplement, (*log.Logger)(nil))
 		})
 	})
 }
@@ -24,7 +24,19 @@ func TestGlogLogger(t *testing.T) {
 	case "2":
 		l.Fatalf("Fatal%s", "f")
 	}
+	l.SetLevel(0)
+	l.SetOutput(os.Stdout)
 	Convey("Logger should print", t, func() {
+		Convey("Print", func() {
+			l.Debug("Print")
+			// TODO: Check message
+			So(true, ShouldBeTrue)
+		})
+		Convey("Printf", func() {
+			l.Debugf("Print%s", "f")
+			// TODO: Check message
+			So(true, ShouldBeTrue)
+		})
 		Convey("Debug", func() {
 			l.Debug("Debug")
 			// TODO: Check message

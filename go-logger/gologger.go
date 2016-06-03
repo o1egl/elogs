@@ -3,10 +3,24 @@ package gologger
 import (
 	"fmt"
 	"github.com/apsdehal/go-logger"
+	"io"
 )
 
 type golog struct {
 	l *logger.Logger
+}
+
+func (l *golog) SetOutput(w io.Writer) {
+}
+
+func (l *golog) SetLevel(lvl uint8) {
+}
+
+func (l *golog) Print(args ...interface{}) {
+	l.l.Debug(fmt.Sprint(args...))
+}
+func (l *golog) Printf(format string, args ...interface{}) {
+	l.l.Debug(fmt.Sprintf(format, args...))
 }
 
 func (l *golog) Debug(args ...interface{}) {

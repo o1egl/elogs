@@ -1,9 +1,40 @@
 package logrus
 
-import log "github.com/Sirupsen/logrus"
+import (
+	log "github.com/Sirupsen/logrus"
+	"io"
+)
 
 type logger struct {
 	l *log.Logger
+}
+
+func (l *logger) SetOutput(w io.Writer) {
+	l.l.Out = w
+}
+
+func (l *logger) SetLevel(lvl uint8) {
+	switch lvl {
+	case 0:
+		l.l.Level = log.PanicLevel
+	case 1:
+		l.l.Level = log.FatalLevel
+	case 2:
+		l.l.Level = log.ErrorLevel
+	case 3:
+		l.l.Level = log.WarnLevel
+	case 4:
+		l.l.Level = log.InfoLevel
+	default:
+		l.l.Level = log.DebugLevel
+	}
+}
+
+func (l *logger) Print(args ...interface{}) {
+	l.l.Print(args...)
+}
+func (l *logger) Printf(format string, args ...interface{}) {
+	l.l.Printf(format, args...)
 }
 
 func (l *logger) Debug(args ...interface{}) {

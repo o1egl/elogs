@@ -2,9 +2,23 @@ package glog
 
 import (
 	"github.com/golang/glog"
+	"io"
 )
 
 type logger struct {
+}
+
+func (l *logger) SetOutput(w io.Writer) {
+}
+
+func (l *logger) SetLevel(lvl uint8) {
+}
+
+func (l *logger) Print(args ...interface{}) {
+	glog.Info(args...)
+}
+func (l *logger) Printf(format string, args ...interface{}) {
+	glog.Infof(format, args...)
 }
 
 func (*logger) Debug(args ...interface{}) {

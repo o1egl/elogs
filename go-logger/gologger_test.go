@@ -3,7 +3,7 @@ package gologger
 import (
 	"bytes"
 	"github.com/apsdehal/go-logger"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/log"
 	. "github.com/smartystreets/goconvey/convey"
 	"os"
 	"os/exec"
@@ -15,7 +15,7 @@ func TestLoggerInitialization(t *testing.T) {
 	Convey("Logger should", t, func() {
 		Convey("Implement echo.Logger interface", func() {
 			l := New()
-			So(l, ShouldImplement, (*echo.Logger)(nil))
+			So(l, ShouldImplement, (*log.Logger)(nil))
 		})
 		Convey("Initialized from custom logger", func() {
 			buf := new(bytes.Buffer)
@@ -31,7 +31,17 @@ func TestLogger(t *testing.T) {
 	buf := new(bytes.Buffer)
 	logger, _ := logger.New("test", 0, buf)
 	l := FlomLogger(logger)
+	l.SetLevel(10)
+	l.SetOutput(buf)
 	Convey("Logger should print", t, func() {
+		Convey("Print", func() {
+			l.Print("Print")
+			testLogMsg("Print", buf)
+		})
+		Convey("Printf", func() {
+			l.Printf("Print%s", "f")
+			testLogMsg("Printf", buf)
+		})
 		Convey("Debug", func() {
 			l.Debug("Debug")
 			testLogMsg("Debug", buf)
